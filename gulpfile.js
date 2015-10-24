@@ -11,6 +11,12 @@ var elixir = require('laravel-elixir');
  |
  */
 
+elixir.config.sourcemaps = false;
+var sourcemap = "resources/assets/";
+
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass(sourcemap + 'sass/main.scss', 'resources/assets/css/main.css');
+    mix.sass(sourcemap + 'sass/ie8.scss', 'resources/assets/css/ie8.css');
+    mix.copy(sourcemap + 'css', 'public/css');
+    mix.copy(sourcemap + 'images', 'public/images');
 });
