@@ -12,3 +12,8 @@
 */
 
 Route::get('/', ['uses' => 'WebsiteController@index', 'as' => 'website.index']);
+
+// Authentication routes...
+Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'as' => 'website.login']);
+Route::post('login', ['uses' => 'Auth\AuthController@postLogin', 'as' => 'website.authenticate']);
+Route::get('logout', ['uses' => 'Auth\AuthController@getLogout', 'as' => 'website.logout']);
