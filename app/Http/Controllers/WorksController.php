@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Work;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class WebsiteController extends Controller
+class WorksController extends Controller
 {
-    const NUMBER_OF_WORKS_TO_SHOW = 6;
-
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +15,7 @@ class WebsiteController extends Controller
      */
     public function index()
     {
-        $works = Work::orderBy('updated_at', 'desc')->take(self::NUMBER_OF_WORKS_TO_SHOW)->get();
-        return view('pages.index', ['works' => $works]);
+        //
     }
 
     /**

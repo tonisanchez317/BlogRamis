@@ -13,6 +13,8 @@
 
 Route::get('/', ['uses' => 'WebsiteController@index', 'as' => 'website.index']);
 
+Route::resource('works', 'WorksController');
+
 // Authentication routes...
 Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'as' => 'website.login']);
 Route::post('login', ['uses' => 'Auth\AuthController@postLogin', 'as' => 'website.authenticate']);

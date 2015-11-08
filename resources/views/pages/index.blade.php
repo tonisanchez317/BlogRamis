@@ -18,36 +18,17 @@
     <section id="two">
         <h2>Recent Work</h2>
         <div class="row">
-            <article class="6u 12u$(xsmall) work-item">
-                <a href="{{ asset('images/fulls/01.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/01.jpg') }}" alt="" /></a>
-                <h3>Magna sed consequat tempus</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-            <article class="6u$ 12u$(xsmall) work-item">
-                <a href="{{ asset('images/fulls/02.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/02.jpg') }}" alt="" /></a>
-                <h3>Ultricies lacinia interdum</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-            <article class="6u 12u$(xsmall) work-item">
-                <a href="{{ asset('images/fulls/03.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/03.jpg') }}" alt="" /></a>
-                <h3>Tortor metus commodo</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-            <article class="6u$ 12u$(xsmall) work-item">
-                <a href="{{ asset('images/fulls/04.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/04.jpg') }}" alt="" /></a>
-                <h3>Quam neque phasellus</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-            <article class="6u 12u$(xsmall) work-item">
-                <a href="{{ asset('images/fulls/05.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/05.jpg') }}" alt="" /></a>
-                <h3>Nunc enim commodo aliquet</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-            <article class="6u$ 12u$(xsmall) work-item">
-                <a href="{{ asset('images/fulls/06.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/06.jpg') }}" alt="" /></a>
-                <h3>Risus ornare lacinia</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
+            @forelse($works as $work)
+                <article class="6u 12u$(xsmall) work-item">
+                    <a href="{{ asset('images/fulls/0'.$work->picture.'.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/0'.$work->picture.'.jpg') }}" alt="" /></a>
+                    <h2>{{ $work->name }}</h2>
+                    <h4>{{ $work->user->name }}</h4>
+                </article>
+            @empty
+                <article class="12u work-item">
+                    <h3>There isn't any work recently</h3>
+                </article>
+            @endforelse
         </div>
         @if(Auth::check())
             <ul class="actions">

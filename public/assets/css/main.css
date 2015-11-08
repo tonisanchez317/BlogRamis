@@ -1617,6 +1617,9 @@ input[type="button"],
     font-size: 0.8em;
     line-height: 1.5em;
     margin: 0; }
+  .work-item h2 {
+    margin-bottom: 0;
+    color: #232323; }
 
 /* Header */
 #header {
