@@ -1,6 +1,8 @@
 <header id="header">
-    <a href="#" class="image avatar"><img src="{{ asset('images/avatar.jpg') }}" alt="" /></a>
-    <h1><strong>I am Strata</strong>, a super simple<br />
-        responsive site template freebie<br />
-        crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1>
+    @if(Auth::check())
+        <a href="#" class="image avatar"><img src="{{ asset('images/'.Auth::getUser()->name.'_over.jpg') }}" width="120px" height="120px" alt="" /></a>
+        <h1>Hello, I am <strong>{{ Auth::getUser()->name }}</strong></h1>
+    @else
+        <h1>Please, <a href="{{ route('website.login') }}">log in</a> to publish new works.</h1>
+    @endif
 </header>

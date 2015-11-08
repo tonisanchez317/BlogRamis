@@ -49,9 +49,11 @@
                 <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
             </article>
         </div>
-        <ul class="actions">
-            <li><a href="#" class="button">Add new work</a></li>
-        </ul>
+        @if(Auth::check())
+            <ul class="actions">
+                <li><a href="#" class="button">Add new work</a></li>
+            </ul>
+        @endif
     </section>
 
     <!-- Three -->
