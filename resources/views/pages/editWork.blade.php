@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-    @include('partials.formWork')
-
+    @include('partials.formWork', ['edit' => true])
 
 @endsection

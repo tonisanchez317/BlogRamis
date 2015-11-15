@@ -8,7 +8,7 @@
             @forelse($works as $work)
                 <article class="6u 12u$(xsmall) work-item">
                     <a href="{{ asset('images/fulls/0'.$work->picture.'.jpg') }}" class="image fit thumb"><img src="{{ asset('images/thumbs/0'.$work->picture.'.jpg') }}" alt="" /></a>
-                    <h2>{{ $work->name }}</h2>
+                    <h3>{{ $work->name }}</h3>
                     <h4>{{ $work->user->name }}</h4>
                 </article>
             @empty
