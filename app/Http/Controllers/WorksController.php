@@ -65,9 +65,9 @@ class WorksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($work)
     {
-        return view('pages.editWork');
+        return view('pages.editWork', compact('work'));
     }
 
     /**
