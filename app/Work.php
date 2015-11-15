@@ -18,7 +18,7 @@ class Work extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'name', 'picture'];
+    protected $fillable = ['user_id', 'name', 'picture', 'description'];
 
     //protected $visible = ['id', 'user_id', 'name', 'picture', 'created_at', 'updated_at']
 
