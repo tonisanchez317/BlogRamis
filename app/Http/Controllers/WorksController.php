@@ -63,7 +63,7 @@ class WorksController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  $work
      * @return \Illuminate\Http\Response
      */
     public function edit($work)
@@ -71,16 +71,19 @@ class WorksController extends Controller
         return view('pages.editWork', compact('work'));
     }
 
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  $work
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(WorkRequest $request, $work)
     {
-        //
+        $work->update($request->all());
+
+        return redirect()->route('works.index');
     }
 
     /**
