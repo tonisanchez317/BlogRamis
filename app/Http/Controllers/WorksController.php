@@ -55,9 +55,9 @@ class WorksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Work $work)
     {
-        //
+        return view('pages.showWork', compact('work'));
     }
 
     /**
@@ -66,7 +66,7 @@ class WorksController extends Controller
      * @param  $work
      * @return \Illuminate\Http\Response
      */
-    public function edit($work)
+    public function edit(Work $work)
     {
         return view('pages.editWork', compact('work'));
     }
@@ -92,8 +92,10 @@ class WorksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Work $work)
     {
-        //
+        $work->delete();
+
+        return redirect()->route('works.index');
     }
 }

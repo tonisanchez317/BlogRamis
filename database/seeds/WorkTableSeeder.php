@@ -11,6 +11,8 @@ class WorkTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('works')->truncate();
+
         factory(\App\Work::class, 6)->create();
     }
 }
