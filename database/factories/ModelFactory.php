@@ -24,6 +24,7 @@ $factory->define(App\Work::class, function (Faker\Generator $faker) {
     return [
         'user_id' => rand(1,3),
         'name' => $faker->name,
+        'description' => $faker->text(),
         'picture' => '0'.rand(1,6),
     ];
 });
