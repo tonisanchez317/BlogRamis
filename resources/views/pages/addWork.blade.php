@@ -2,6 +2,8 @@
 
 @section('content')
 
+
     @include('partials.formWork')
+
 
 @endsection
