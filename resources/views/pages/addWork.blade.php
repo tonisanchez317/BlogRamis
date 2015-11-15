@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-
+    
     <div class="8u 12u$(small)">
         <form method="post" action="{{ route('works.store') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />

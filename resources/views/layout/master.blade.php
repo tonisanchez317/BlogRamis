@@ -21,6 +21,7 @@
 <!-- Main -->
 <div id="main">
 
+    @include('layout.partials.errors')
     @yield('content')
 
 </div>

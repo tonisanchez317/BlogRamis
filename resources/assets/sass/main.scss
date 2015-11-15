@@ -1003,6 +1003,22 @@
 				padding-top: 0;
 			}
 		}
+
+	  	.error-list{
+          background: #ef5350;
+          padding: 5px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+    
+            ul{
+              margin: 0;
+            }
+          
+            li{
+              list-style: none;
+              color: #ffebee;
+            }
+		}
 	}
 
 /* Poptrox */

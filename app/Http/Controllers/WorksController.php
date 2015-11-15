@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\WorkRequest;
 use App\Work;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -41,7 +42,7 @@ class WorksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(WorkRequest $request)
     {
         Work::create(array_add($request->all(), 'user_id', Auth::user()->id));
 
