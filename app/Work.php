@@ -20,6 +20,8 @@ class Work extends Model
      */
     protected $fillable = ['user_id', 'name', 'picture'];
 
+    //protected $visible = ['id', 'user_id', 'name', 'picture', 'created_at', 'updated_at']
+
     public function user(){
         return $this->belongsTo(User::class);
     }

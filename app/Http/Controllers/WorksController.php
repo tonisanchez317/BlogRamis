@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Work;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class WorksController extends Controller
 {
@@ -15,7 +17,12 @@ class WorksController extends Controller
      */
     public function index()
     {
-        //
+        $works = Work::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
+
+        return view('pages.myWorks', ['works' => $works]);
+        //return view('works.index', compact('works'));
+        //return view('works.index')->with(['works', => $works]);
+        //return view('works.index')->with(compact('works'));
     }
 
     /**
@@ -25,7 +32,7 @@ class WorksController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.addWork');
     }
 
     /**
@@ -36,7 +43,9 @@ class WorksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Work::create(array_add($request->all(), 'user_id', Auth::user()->id));
+
+        return redirect()->route('website.index');
     }
 
     /**

@@ -32,7 +32,7 @@
         </div>
         @if(Auth::check())
             <ul class="actions">
-                <li><a href="#" class="button">Add new work</a></li>
+                <li><a href="{{ route('works.create') }}" class="button">Add new work</a></li>
             </ul>
         @endif
     </section>
