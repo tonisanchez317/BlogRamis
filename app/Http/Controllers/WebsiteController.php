@@ -87,4 +87,8 @@ class WebsiteController extends Controller
     {
         //
     }
+
+    public function showRestrict(){
+        echo "Acceso concedido";
+    }
 }
